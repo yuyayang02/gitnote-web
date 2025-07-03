@@ -1,0 +1,36 @@
+@import url("./github-markdown-light.css");
+/* @import url("./articles.css"); */
+/* @import url("https://static.zeoseven.com/zsft/292/main/result.css"); */
+@import url("https://chinese-fonts-cdn.deno.dev/packages/lxgwwenkai/dist/LXGWWenKai-Bold/result.css");
+
+@import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+
+
+@theme {
+    --font-lxgw: "LXGW WenKai", "Microsoft YaHei", "serif";
+}
+
+:root {
+    --color-border-muted: hsla(210, 18%, 87%, 1);
+    --color-neutral-muted: rgba(175, 184, 193, 0.2);
+    --color-fg-muted: #656d76;
+    --color-fg-default: #1F2328;
+    --color-canvas-subtle: #f6f8fa;
+    --color-border-default: #d0d7de;
+    --color-accent-fg: #0969da;
+    --color-accent-fg-darker: #043166;
+    --color-canvas-default: #ffffff;
+    --color-subtopic: #767676;
+
+    --text-selected-color: white;
+    /* 设置选中文本的文字颜色 */
+    --text-selected-bg-color: rgba(102, 160, 255, 0.69);
+    /* 设置选中文本的背景颜色 */
+}
+
+/* 隐藏脚注 label */
+#footnote-label {
+    display: none;
+}

@@ -1,0 +1,14 @@
+# 忽略这些文件和目录
+node_modules
+.git
+.DS_Store
+.env
+.env.local
+*.log
+.cache
+.svelte-kit
+/build
+/coverage
+.vscode
+.idea
+dist
