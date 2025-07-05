@@ -7,6 +7,10 @@
 	import "../app.css";
 	import { useSidebarStore } from "$lib/stores/SidebarStore";
 	import { page } from "$app/state";
+	import {
+		PUBLIC_UMAMI_WEBSITE_ID,
+		PUBLIC_UMAMI_SCRIPT_URL,
+	} from "$env/static/public";
 
 	const { children, data }: { children: Snippet; data: LayoutData } =
 		$props();
@@ -19,6 +23,17 @@
 
 	const isHome = $derived(page.url.pathname === "/");
 </script>
+
+<svelte:head>
+	<!-- 编译时确定 -->
+	{#if PUBLIC_UMAMI_SCRIPT_URL && PUBLIC_UMAMI_WEBSITE_ID}
+		<script
+			defer
+			src={PUBLIC_UMAMI_SCRIPT_URL}
+			data-website-id={PUBLIC_UMAMI_WEBSITE_ID}
+		></script>
+	{/if}
+</svelte:head>
 
 <div class="min-h-screen flex flex-col font-lxgw">
 	<div
