@@ -14,7 +14,7 @@
 <ContentList data={article}>
     {#snippet header()}
         <h1 class="flex flex-col">
-            <span class="text-[20px]  text-(--color-fg-muted)">Filter by</span>
+            <span class="text-[20px] text-(--color-fg-muted)">Filter by</span>
             <span class="text-3xl mt-2 mb-4">{`#${page.params.tag}`}</span>
         </h1>
     {/snippet}

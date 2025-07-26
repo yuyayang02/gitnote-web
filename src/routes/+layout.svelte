@@ -35,7 +35,7 @@
 	{/if}
 </svelte:head>
 
-<div class="min-h-screen flex flex-col font-lxgw">
+<div class="min-h-screen flex flex-col tracking-wide" style="font-family: var(--fontStack-sansSerif);">
 	<div
 		class="flex-1 flex flex-col max-w-full"
 		style="padding:0 max(16px, calc(0.5 * max(0px, calc(100% - 1100px))))"

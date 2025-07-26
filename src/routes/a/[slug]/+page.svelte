@@ -17,6 +17,7 @@
             </header>
 
             <ArticleSummary />
+            <hr />
             <ArticleContent />
             <hr />
             <ArticleMateInfo variant="linked" />
