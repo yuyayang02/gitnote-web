@@ -11,7 +11,7 @@
 
 <div
     class:linked={variant === "linked"}
-    class="-mt-2 text-[14px] text-(--color-subtopic) flex space-x-1 *:text-center *:my-auto *:after:content-['|'] *:after:ml-1 *:last:after:hidden"
+    class="-mt-2 text-[14px] text-(--color-subtopic) flex space-x-1 *:text-center *:my-auto *:not(:last-child):after:content-['|'] *:not(:last-child):after:ml-1"
 >
     <!-- 隐藏作者信息 -->
     <!-- <span>{article.author.name}</span> -->
@@ -20,13 +20,11 @@
         ><a href={categoryURL(article.category.id)}>{article.category.name}</a
         ></span
     >
-    <span class="flex items-center gap-2">
-        {#if article.tags && article.tags.length > 0}
+    {#if article.tags && article.tags.length > 0}
+        <span class="px-1 flex items-center gap-2">
             {#each article.tags as t (t)}
-                <span>
-                    <a href={tagURL(t)}>#{t}</a>
-                </span>
+                <span><a href={tagURL(t)}>#{t}</a></span>
             {/each}
-        {/if}
-    </span>
+        </span>
+    {/if}
 </div>
