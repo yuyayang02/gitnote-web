@@ -17,7 +17,7 @@
     <!-- <span>{article.author.name}</span> -->
     <span>{timestampToLocalDate(article.updated_at)}</span>
     <span
-        ><a href={categoryURL(article.category.id)}>{article.category.name}</a
+        ><a href={categoryURL(article.group.id)}>{article.group.name}</a
         ></span
     >
     {#if article.tags && article.tags.length > 0}

@@ -16,7 +16,7 @@
 		$props();
 
 	useSidebarStore().set({
-		categories: data.categories || [],
+		categories: data.groups || [],
 		tags: data.tags || [],
 		recentArticles: data.recentArticles || [],
 	});

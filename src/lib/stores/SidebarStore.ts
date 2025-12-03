@@ -1,9 +1,9 @@
-import type { ArticleMateData, Category } from '$lib/types';
+import type { ArticleMateData, Group } from '$lib/types';
 import { writable, type Writable } from 'svelte/store';
 
 
 type SidebarData = {
-  categories: Category[];
+  categories: Group[];
   tags: string[],
   recentArticles: ArticleMateData[]
 }

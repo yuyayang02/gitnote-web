@@ -1,4 +1,4 @@
-export interface Category {
+export interface Group {
     id: string,
     name: string,
 }
@@ -10,12 +10,12 @@ export interface ArticleMateData {
     author: {
         name: string
     },
-    category: Category,
+    group: Group,
     tags: string[],
     updated_at: number
     created_at: number
 }
 
-export interface ArticleContentData extends ArticleMateData {
+export interface ArticleDetail extends ArticleMateData {
     content: string,
 }

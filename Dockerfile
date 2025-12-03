@@ -1,18 +1,18 @@
-# 使用 Node.js 官方镜像作为基础镜像
-FROM node:18-alpine AS builder
+# 使用 Bun 官方镜像作为构建阶段的基础镜像
+FROM oven/bun:canary AS builder
 
 # 设置工作目录
 WORKDIR /app
 
-# 复制 package.json 和 package-lock.json
-COPY package*.json ./
+COPY package.json ./
+COPY bunfig.toml ./
 
-RUN npm config set registry https://registry.npmmirror.com
-RUN npm install --global pnpm
-RUN pnpm config set registry https://registry.npmmirror.com
+RUN cat <<EOF > $HOME/.bunfig.toml
+[install]
+registry = "https://registry.npmmirror.com"
+EOF
 
-# 安装依赖
-RUN pnpm i
+RUN bun install
 
 # 复制项目文件
 COPY . .
@@ -26,26 +26,24 @@ ENV API_BASE_URL=$API_BASE_URL
 ENV PUBLIC_UMAMI_WEBSITE_ID=$PUBLIC_UMAMI_WEBSITE_ID
 ENV PUBLIC_UMAMI_SCRIPT_URL=$PUBLIC_UMAMI_SCRIPT_URL
 
-# 构建应用
-RUN pnpm build
+RUN bun run build
 
-# 使用更小的基础镜像来运行应用
-FROM node:18-alpine
+FROM oven/bun:canary
 
 WORKDIR /app
 
-# 从构建阶段复制必要的文件
 COPY --from=builder /app/build ./build
-COPY --from=builder /app/package*.json ./
+COPY --from=builder /app/package.json ./
 
-RUN npm config set registry https://registry.npmmirror.com
-RUN npm install --global pnpm
-RUN pnpm config set registry https://registry.npmmirror.com
-# 安装生产依赖
-RUN pnpm i -p
+RUN cat <<EOF > $HOME/.bunfig.toml
+[install]
+registry = "https://registry.npmmirror.com"
+EOF
+
+RUN bun install --production
 
 # 暴露端口
 EXPOSE 3000
 
 # 启动应用
-CMD ["node", "build"]
+CMD ["bun", "build/index.js"]

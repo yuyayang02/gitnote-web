@@ -1,8 +1,8 @@
 <script lang="ts">
-    import type { Category } from "$lib/types";
+    import type { Group } from "$lib/types";
     import { categoryURL } from "$lib/utils";
 
-    const { categories }: { categories: Category[] } = $props();
+    const { categories }: { categories: Group[] } = $props();
 </script>
 
 {#if categories.length > 0}
