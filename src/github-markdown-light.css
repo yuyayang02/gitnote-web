@@ -5,10 +5,11 @@
     -webkit-text-size-adjust: 100%;
     margin: 0;
     color: #1f2328;
+    /* color:  #333; */
     background-color: #ffffff;
     font-family: var(--fontStack-sansSerif);
     font-size: 17px;
-    line-height: 1.5;
+    line-height: 1.8;
     word-wrap: break-word;
 }
 
@@ -780,7 +781,7 @@
     font-size: 85%;
     line-height: 1.45;
     color: #1f2328;
-    background-color: #f6f8fa;
+    background-color: #f4f4f4;
     border-radius: 6px;
 }
 

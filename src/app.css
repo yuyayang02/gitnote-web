@@ -32,3 +32,17 @@
     --fontStack-mono: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, "LXGW WenKai", monospace;
     --fontStack-mono-mobile: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace, "LXGW WenKai";
 }
+
+a {
+    text-decoration: none;
+    /* 预设一个渐变背景，初始宽度为0或透明 */
+    background: linear-gradient(to bottom, transparent 60%, rgba(66, 185, 131, 0.2) 0);
+    /* 这里颜色可以用你喜欢的淡蓝或淡红 */
+}
+
+a:hover {
+    /* 悬停时加深颜色或改变背景 */
+    background: linear-gradient(to bottom, transparent 60%, rgba(66, 185, 131, 0.4) 0);
+    /* 或者简单的底部边框动画 */
+    /* border-bottom: 1px solid #42b983;  */
+}

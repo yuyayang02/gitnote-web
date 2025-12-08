@@ -12,7 +12,7 @@
     {#key data.slug}
         <ArticleContainer {data}>
             <header>
-                <h1>{data.title}</h1>
+                <h1 class="mb-[0]!">{data.title}</h1>
                 <ArticleMateInfo />
             </header>
 

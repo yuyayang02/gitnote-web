@@ -11,7 +11,10 @@
 
 <div
     class:linked={variant === "linked"}
-    class="-mt-2 text-[14px] text-(--color-subtopic) flex space-x-1 *:text-center *:my-auto *:not(:last-child):after:content-['|'] *:not(:last-child):after:ml-1"
+    class="flex space-x-1
+  [&>*:not(:last-child)]:after:content-['|']
+  [&>*:not(:last-child)]:after:ml-1
+  text-[14px] text-(--color-subtopic)"
 >
     <!-- 隐藏作者信息 -->
     <!-- <span>{article.author.name}</span> -->
