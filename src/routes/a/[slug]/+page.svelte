@@ -3,10 +3,16 @@
     import ArticleContent from "$lib/components/Article/ArticleContent.svelte";
     import ArticleMateInfo from "$lib/components/Article/ArticleMateInfo.svelte";
     import ArticleSummary from "$lib/components/Article/ArticleSummary.svelte";
+    import { siteConfig } from "$lib/config.js";
     import { type ArticleDetail } from "$lib/types/index.js";
     const { data } = $props();
     const content = $derived(data.article);
 </script>
+
+<svelte:head>
+    <title>{data.article.title}|{siteConfig.title}</title>
+</svelte:head>
+
 
 {#snippet articleContent(data: ArticleDetail)}
     {#key data.slug}

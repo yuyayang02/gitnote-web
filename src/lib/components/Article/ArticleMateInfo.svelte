@@ -19,14 +19,13 @@
     <!-- 隐藏作者信息 -->
     <!-- <span>{article.author.name}</span> -->
     <span>{timestampToLocalDate(article.updated_at)}</span>
-    <span
-        ><a href={categoryURL(article.group.id)}>{article.group.name}</a
-        ></span
-    >
+    <span>
+        <a href={categoryURL(article.group.id)} title={article.group.id}>{article.group.name}</a>
+    </span>
     {#if article.tags && article.tags.length > 0}
         <span class="px-1 flex items-center gap-2">
             {#each article.tags as t (t)}
-                <span><a href={tagURL(t)}>#{t}</a></span>
+                <span><a href={tagURL(t)} title={t}>#{t}</a></span>
             {/each}
         </span>
     {/if}
