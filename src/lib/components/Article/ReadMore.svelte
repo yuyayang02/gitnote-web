@@ -6,8 +6,8 @@
     const { slug } = getContext<ArticleMateData>("article");
 </script>
 
-<div class="my-4 flex flex-row-reverse">
-    <a href={articleURL(slug)} class="underline p-1 inactive">
+<div class="my-6 flex flex-row">
+    <a href={articleURL(slug)} class="hover:underline inactive text-(--color-theme)">
         阅读全部
     </a>
 </div>

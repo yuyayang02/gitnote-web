@@ -9,7 +9,7 @@
 
 <header>
     <h2
-        class="flex items-center gap-2 border-b-1 border-(--color-border-muted) mt-[.3em] mb-[0em]! pb-[.3em] text-[1.4em]"
+        class="flex items-center gap-2 border-b-1 border-(--color-border-muted) mt-[.3em] mb-[.5em]! pb-[.1em]! text-[1.4em]"
     >
         <a href={articleURL(slug)}>{title}</a>
     </h2>

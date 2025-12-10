@@ -5,6 +5,6 @@
     const { summary } = getContext<ArticleMateData>("article");
 </script>
 
-<div class="my-6 linked">
+<div class="my-2 linked">
     {@html summary}
 </div>

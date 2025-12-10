@@ -6,7 +6,6 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
-/* @import "tailwindcss/preflight"; */
 
 :root {
     --color-border-muted: hsla(210, 18%, 87%, 1);
@@ -19,7 +18,7 @@
     --color-accent-fg-darker: #043166;
     --color-canvas-default: #ffffff;
     --color-subtopic: #767676;
-
+    --color-theme: #b7410e;
     /* 设置选中文本的文字颜色 */
     --text-selected-color: white;
     /* 设置选中文本的背景颜色 */
@@ -31,18 +30,4 @@
     /* 代码字体栈：参考 GitHub 默认 */
     --fontStack-mono: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, "LXGW WenKai", monospace;
     --fontStack-mono-mobile: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace, "LXGW WenKai";
-}
-
-a {
-    /* text-decoration: none; */
-    /* 预设一个渐变背景，初始宽度为0或透明 */
-    /* background: linear-gradient(to bottom, transparent 60%, rgba(66, 185, 131, 0.2) 0); */
-    /* 这里颜色可以用你喜欢的淡蓝或淡红 */
-}
-
-a:hover {
-    /* 悬停时加深颜色或改变背景 */
-    /* background: linear-gradient(to bottom, transparent 60%, rgba(66, 185, 131, 0.4) 0); */
-    /* 或者简单的底部边框动画 */
-    /* border-bottom: 1px solid #42b983;  */
 }

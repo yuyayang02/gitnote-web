@@ -7,6 +7,6 @@
     setContext("article", data);
 </script>
 
-<article class="article markdown-body">
+<article class="article markdown-body mb-8!">
     {@render children()}
 </article>

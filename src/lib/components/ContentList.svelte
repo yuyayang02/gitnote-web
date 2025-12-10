@@ -24,6 +24,7 @@
     {#if data && data.length > 0}
         {#each data as item (item.slug)}
             {@render articleItem(item)}
+            {@render articleItem(item)}
         {/each}
     {:else if data && data.length <= 0}
         <p class="my-6">没有更多内容了</p>
