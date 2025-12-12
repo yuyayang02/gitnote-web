@@ -5,14 +5,37 @@
     import ArticleSummary from "$lib/components/Article/ArticleSummary.svelte";
     import { siteConfig } from "$lib/config.js";
     import { type ArticleDetail } from "$lib/types/index.js";
+    import { onMount, tick } from "svelte";
     const { data } = $props();
     const content = $derived(data.article);
+
+    onMount(() => {
+        tick().then(() => {
+            const headings = document.querySelectorAll(
+                ".markdown-body h1, h2, h3, h4, h5, h6",
+            );
+
+            headings.forEach((h) => {
+                const id = h.id;
+                if (!id) return;
+
+                const anchor = document.createElement("a");
+                anchor.className = "anchor";
+                anchor.href = `#${id}`;
+
+                const icon = document.createElement("span");
+                icon.className = "octicon octicon-link";
+
+                anchor.appendChild(icon);
+                h.insertBefore(anchor, h.firstChild);
+            });
+        });
+    });
 </script>
 
 <svelte:head>
     <title>{data.article.title}|{siteConfig.title}</title>
 </svelte:head>
-
 
 {#snippet articleContent(data: ArticleDetail)}
     {#key data.slug}
